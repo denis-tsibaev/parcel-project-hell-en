@@ -1,32 +1,30 @@
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  max-width: unset;
 
-  .container {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    max-width: unset;
-
-    .guarantee-title {
-      font-weight: 800;
-      font-size: 26px;
-      line-height: 1.3;
-      text-align: center;
-      letter-spacing: 0.03em;
-      margin: 0 0 30px 0;
-
-      @media screen and (min-width: $desktop) {
-        font-size: 46px;
-        line-height: 1.3;
-      }
-    }
-
-    @media screen and (min-width: $tablet) {
-      width: 688px;
-      margin: 0 auto;
-    }
+  .guarantee-title {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.3;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin: 0 0 30px 0;
 
     @media screen and (min-width: $desktop) {
-      width: 1314px;
+      font-size: 46px;
+      line-height: 1.3;
     }
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 688px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 1314px;
   }
 }
 
