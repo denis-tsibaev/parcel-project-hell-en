@@ -845,16 +845,15 @@ header .header-buttons__open-modal {
   }
 }
 .problems {
-  min-width: 320px;
   position: relative;
+  min-width: 320px;
   padding-top: 50px;
-  padding-bottom: 63px;
+  padding-bottom: 50px;
   background-image: linear-gradient(to bottom, #111518 72%, #ffffff 28%);
 }
 @media screen and (min-width: 768px) {
   .problems {
     padding-top: 59px;
-    padding-bottom: 50px;
     background-image: linear-gradient(to bottom, #111518 64%, #ffffff 36%);
   }
 }
@@ -873,6 +872,12 @@ header .header-buttons__open-modal {
   top: 82px;
   right: 0;
   fill: #3d3d3d;
+  display: none;
+}
+@media screen and (min-width: 1366px) {
+  .problems__vector-svg {
+    display: block;
+  }
 }
 
 .problems__title {
@@ -923,7 +928,9 @@ header .header-buttons__open-modal {
   width: 280px;
   height: 488px;
   margin: 0 auto;
-  padding: 20px 30px;
+  padding: 20px 0;
+  padding-left: 30px;
+  padding-right: 14px;
   background: #ffffff;
   box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.08);
 }
@@ -935,7 +942,7 @@ header .header-buttons__open-modal {
     height: 303px;
     padding-top: 30px;
     padding-left: 96px;
-    padding-right: 47px;
+    padding-right: 46px;
     padding-bottom: 26px;
   }
 }
@@ -963,7 +970,7 @@ header .header-buttons__open-modal {
 }
 @media screen and (max-width: 1365px) {
   .problems__section:nth-child(4) {
-    padding-right: 24px;
+    padding-right: 50px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -973,7 +980,7 @@ header .header-buttons__open-modal {
 }
 @media screen and (min-width: 768px) and (max-width: 1365px) {
   .problems__section {
-    width: 225px;
+    width: 236px;
   }
   .problems__section:nth-child(2n+1) {
     margin-right: 22px;
@@ -2123,19 +2130,20 @@ header .header-buttons__open-modal {
 
   .overlay {
     background-image: url("/contact-form-bg-desktop.85db541a.png");
+    background-size: contain;
   }
 }
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 1366px), screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1366px), screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 1366px), screen and (min-resolution: 192dpi) and (min-width: 1366px), screen and (min-resolution: 2dppx) and (min-width: 1366px) {
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 769px), screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 769px), screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 769px), screen and (min-resolution: 192dpi) and (min-width: 769px), screen and (min-resolution: 2dppx) and (min-width: 769px) {
   .overlay {
     background-image: url("/contact-form-bg-desktop@2x.b4a7190b.png");
   }
 }
-@media screen and (min-device-pixel-ratio: 2) and (max-width: 1365px), screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1365px), screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1365px), screen and (min-resolution: 192dpi) and (max-width: 1365px), screen and (min-resolution: 2dppx) and (max-width: 1365px) {
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 768px), screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px), screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 768px), screen and (min-resolution: 192dpi) and (max-width: 768px), screen and (min-resolution: 2dppx) and (max-width: 768px) {
   .overlay {
     background-image: url("/contact-form-bg-tablet@2x.f73e38c6.png");
   }
 }
-@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px), screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px), screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 767px), screen and (min-resolution: 192dpi) and (max-width: 767px), screen and (min-resolution: 2dppx) and (max-width: 767px) {
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 320px), screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 320px), screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 320px), screen and (min-resolution: 192dpi) and (max-width: 320px), screen and (min-resolution: 2dppx) and (max-width: 320px) {
   .overlay {
     background-image: url("/contact-form-bg-mobile@2x.42959577.png");
   }
