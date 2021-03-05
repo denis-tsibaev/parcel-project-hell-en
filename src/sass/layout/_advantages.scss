@@ -1,9 +1,28 @@
+.advantages {
+  padding-bottom: 50px;
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 130px;
+  }
+  ul {
+    width: 216px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      margin: -10px;
+      width: auto;
+    }
+  }
+}
+
 .advantages li {
   font-weight: bold;
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0.08em;
-  color: #111518;
+  color: $color-dark;
+
   display: flex;
   @media screen and (max-width: 767px) {
     &:not(:last-child) {
@@ -30,6 +49,7 @@
     width: 61px;
     height: 62px;
     margin-right: 10px;
+
     @media screen and (min-width: $desktop) {
       width: 100px;
       height: 102px;
@@ -42,24 +62,6 @@
   &:nth-child(3)::before {
     background-image: url(../images/dollar.svg);
     margin-right: 17px;
-  }
-}
-.advantages ul {
-  width: 216px;
-  margin-right: auto;
-  margin-left: auto;
-
-  @media screen and (min-width: $tablet) {
-    display: flex;
-    margin: -10px;
-    width: auto;
-  }
-}
-.advantages {
-  margin-bottom: 50px;
-  @media screen and (min-width: $desktop) {
-    margin-top: 96px;
-    margin-bottom: 130px;
   }
 }
 
