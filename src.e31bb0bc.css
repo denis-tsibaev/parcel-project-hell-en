@@ -2046,7 +2046,7 @@ header .header-buttons__open-modal {
     justify-content: space-between;
   }
 }
-.section {
+.section-contacts {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: #111518;
@@ -2055,7 +2055,7 @@ header .header-buttons__open-modal {
   text-align: center;
   display: flex;
 }
-.section .contacts-title {
+.section-contacts .contacts-title {
   font-weight: 800;
   font-size: 14px;
   line-height: 1.36;
@@ -2063,10 +2063,10 @@ header .header-buttons__open-modal {
   color: #ffffff;
   margin-bottom: 30px;
 }
-.section .contacts-title .contacts-span-accent {
+.section-contacts .contacts-title .contacts-span-accent {
   color: #ff6b09;
 }
-.section .cotacts-description {
+.section-contacts .cotacts-description {
   font-weight: 600;
   font-size: 12px;
   line-height: 1.25;
@@ -2074,7 +2074,7 @@ header .header-buttons__open-modal {
   color: #ffffff;
   margin-bottom: 30px;
 }
-.section .cotacts-description .contacts-span-accent {
+.section-contacts .cotacts-description .contacts-span-accent {
   color: #ff6b09;
 }
 
@@ -2093,11 +2093,11 @@ header .header-buttons__open-modal {
 }
 
 @media screen and (min-width: 768px) {
-  .section .contacts-title {
+  .section-contacts .contacts-title {
     font-size: 26px;
     line-height: 1.3;
   }
-  .section .cotacts-description {
+  .section-contacts .cotacts-description {
     font-size: 14px;
     line-height: 1.214;
     margin-bottom: 40px;
@@ -2114,15 +2114,15 @@ header .header-buttons__open-modal {
   }
 }
 @media screen and (min-width: 1366px) {
-  .section {
+  .section-contacts {
     padding-top: 100px;
   }
-  .section .contacts-title {
+  .section-contacts .contacts-title {
     font-size: 46px;
     margin: 0 auto 50px;
     width: 1090px;
   }
-  .section .cotacts-description {
+  .section-contacts .cotacts-description {
     font-size: 30px;
     line-height: 1.233;
     margin-bottom: 56px;

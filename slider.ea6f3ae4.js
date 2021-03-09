@@ -117,153 +117,58 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../modal.js":[function(require,module,exports) {
-var mobileMenuBtn = document.querySelector('#mobile-menu-btn');
-var CertificateBtn = document.querySelector('#certificate-btn');
-var ConsultationBtn = document.querySelector('.consultation-button');
-var mobileMenu = document.querySelector('#mobile-menu');
-var CertificateModal = document.querySelector('#certificate-modal');
-var ConsultationModal = document.querySelector('#consultation-modal');
-var modalCloseBtns = document.querySelectorAll('.modal-close-btn');
-var modalsWrappers = document.querySelectorAll('.modal-area-bgd');
-var modalContainers = document.querySelectorAll('.modal-area-content');
-var MODAL_ACTIVE_CLASS = 'modal-active';
-var BODY_SCROLL_DISABLE_CLASS = 'body-scroll-disable';
-enableCloseModalOnBgdClick();
-hideModalOnMobileMenuElementsClick();
-var modals = [mobileMenu, CertificateModal, ConsultationModal];
-var buttons = [mobileMenuBtn, CertificateBtn, ConsultationBtn];
-buttons.forEach(function (btn, index) {
-  var projectModal = modals[index];
-
-  if (btn) {
-    btn.addEventListener('click', function (event) {
-      event.preventDefault();
-      projectModal.classList.add(MODAL_ACTIVE_CLASS);
-      document.body.classList.add(BODY_SCROLL_DISABLE_CLASS);
-    });
-  }
-});
-modalCloseBtns.forEach(function (btn) {
-  btn.addEventListener('click', hideModal);
-});
-
-function enableCloseModalOnBgdClick() {
-  if (modalContainers.length) {
-    modalContainers.forEach(function (container) {
-      container.addEventListener('click', function (event) {
-        return event.stopPropagation();
-      });
-    });
-  }
-
-  if (modalsWrappers.length) {
-    modalsWrappers.forEach(function (container) {
-      container.addEventListener('click', hideModal);
-    });
-  }
-}
-
-function hideModal() {
-  var modalToClose = document.querySelector(".".concat(MODAL_ACTIVE_CLASS));
-
-  if (modalToClose) {
-    modalToClose.classList.remove(MODAL_ACTIVE_CLASS);
-    document.body.classList.remove(BODY_SCROLL_DISABLE_CLASS);
-  }
-}
-
-function hideModalOnMobileMenuElementsClick() {
-  var MOBILE_MENU_ITEM_CLOSE_DELAY = 150;
-  var menuElements = document.querySelectorAll('.mobile-menu-item');
-
-  if (menuElements.length) {
-    menuElements.forEach(function (container) {
-      container.addEventListener('click', function () {
-        return setTimeout(hideModal, MOBILE_MENU_ITEM_CLOSE_DELAY);
-      });
-    });
-  }
-}
-},{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+})({"../js/slider.js":[function(require,module,exports) {
+$(document).ready(function () {
+  $('.slider').slick({
+    arrows: true,
+    dots: true,
+    adaptiveHeight: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    speed: 600,
+    easing: 'ease',
+    infinite: true,
+    initialSlide: 0,
+    autoplay: false,
+    autoplaySpeed: 3000,
+    pauseOnFocus: true,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
+    draggable: true,
+    swipe: true,
+    touchThreshold: 5,
+    touchMove: true,
+    waitForAnimate: false,
+    centerMode: false,
+    variableWidth: false,
+    rows: 1,
+    slidesPerRow: 1,
+    vertical: false,
+    verticalSwiping: false,
+    asNavFor: '.sliderbig',
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2
       }
-    }
+    }, {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1
+      }
+    }],
+    mobileFirst: false // appendArrows: $('.content'),
+    // appenDots: $('.content'),
 
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\images\\hero\\hero-bg\\hero-bg-mobile.jpg":[["hero-bg-mobile.b6e2f3a4.jpg","images/hero/hero-bg/hero-bg-mobile.jpg"],"images/hero/hero-bg/hero-bg-mobile.jpg"],"./..\\images\\hero\\hero-bg\\hero-bg-tablet.jpg":[["hero-bg-tablet.76f0745a.jpg","images/hero/hero-bg/hero-bg-tablet.jpg"],"images/hero/hero-bg/hero-bg-tablet.jpg"],"./..\\images\\hero\\hero-bg\\hero-bg-desktop.jpg":[["hero-bg-desktop.109ca883.jpg","images/hero/hero-bg/hero-bg-desktop.jpg"],"images/hero/hero-bg/hero-bg-desktop.jpg"],"./..\\images\\human-figure.svg":[["human-figure.6310b0e4.svg","images/human-figure.svg"],"images/human-figure.svg"],"./..\\images\\mortarboard.svg":[["mortarboard.5faa45cc.svg","images/mortarboard.svg"],"images/mortarboard.svg"],"./..\\images\\dollar.svg":[["dollar.52cec237.svg","images/dollar.svg"],"images/dollar.svg"],"./..\\images\\human-figure-desktop.svg":[["human-figure-desktop.a971b4cc.svg","images/human-figure-desktop.svg"],"images/human-figure-desktop.svg"],"./..\\images\\mortarboard-desktop.svg":[["mortarboard-desktop.d2dc239a.svg","images/mortarboard-desktop.svg"],"images/mortarboard-desktop.svg"],"./..\\images\\dollar-desktop.svg":[["dollar-desktop.ccb44a69.svg","images/dollar-desktop.svg"],"images/dollar-desktop.svg"],"./..\\images\\program\\program-lecture-mobile.png":[["program-lecture-mobile.235676a7.png","images/program/program-lecture-mobile.png"],"images/program/program-lecture-mobile.png"],"./..\\images\\program\\program-lecture-mobile@2x.png":[["program-lecture-mobile@2x.ee43fc7c.png","images/program/program-lecture-mobile@2x.png"],"images/program/program-lecture-mobile@2x.png"],"./..\\images\\program\\program-lecture-tablet.png":[["program-lecture-tablet.39e48a20.png","images/program/program-lecture-tablet.png"],"images/program/program-lecture-tablet.png"],"./..\\images\\program\\program-lecture-tablet@2x.png":[["program-lecture-tablet@2x.aa4558c2.png","images/program/program-lecture-tablet@2x.png"],"images/program/program-lecture-tablet@2x.png"],"./..\\images\\program\\program-lecture-desktop.png":[["program-lecture-desktop.42e7cc8d.png","images/program/program-lecture-desktop.png"],"images/program/program-lecture-desktop.png"],"./..\\images\\program\\program-lecture-desktop@2x.png":[["program-lecture-desktop@2x.66c8e750.png","images/program/program-lecture-desktop@2x.png"],"images/program/program-lecture-desktop@2x.png"],"./..\\images\\about\\check-mark.svg":[["check-mark.007fb8fc.svg","images/about/check-mark.svg"],"images/about/check-mark.svg"],"./..\\images\\fire.svg":[["fire.8570960f.svg","images/fire.svg"],"images/fire.svg"],"./..\\images\\contacts\\contact-form-bg-mobile.png":[["contact-form-bg-mobile.c3bd24a3.png","images/contacts/contact-form-bg-mobile.png"],"images/contacts/contact-form-bg-mobile.png"],"./..\\images\\contacts\\contact-form-bg-tablet.png":[["contact-form-bg-tablet.6d803827.png","images/contacts/contact-form-bg-tablet.png"],"images/contacts/contact-form-bg-tablet.png"],"./..\\images\\contacts\\contact-form-bg-desktop.png":[["contact-form-bg-desktop.85db541a.png","images/contacts/contact-form-bg-desktop.png"],"images/contacts/contact-form-bg-desktop.png"],"./..\\images\\contacts\\contact-form-bg-desktop@2x.png":[["contact-form-bg-desktop@2x.b4a7190b.png","images/contacts/contact-form-bg-desktop@2x.png"],"images/contacts/contact-form-bg-desktop@2x.png"],"./..\\images\\contacts\\contact-form-bg-tablet@2x.png":[["contact-form-bg-tablet@2x.f73e38c6.png","images/contacts/contact-form-bg-tablet@2x.png"],"images/contacts/contact-form-bg-tablet@2x.png"],"./..\\images\\contacts\\contact-form-bg-mobile@2x.png":[["contact-form-bg-mobile@2x.42959577.png","images/contacts/contact-form-bg-mobile@2x.png"],"images/contacts/contact-form-bg-mobile@2x.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("../modal");
-
-require("./sass/main.scss");
-},{"../modal":"../modal.js","./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  });
+  $('.sliderbig').slick({
+    initialSlide: 0,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider'
+  });
+});
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -291,7 +196,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59708" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50843" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -467,5 +372,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../js/slider.js"], null)
+//# sourceMappingURL=/slider.ea6f3ae4.js.map
