@@ -1153,7 +1153,7 @@ header .header-buttons__open-modal {
 }
 @media screen and (min-width: 1366px) {
   .how-we-do__card-information {
-    padding: 0 30pxpx;
+    padding: 0 30px;
   }
 }
 
@@ -1859,7 +1859,7 @@ header .header-buttons__open-modal {
   width: 100%;
 }
 @media screen and (max-width: 767px) {
-  .reviews__img .reviews_img-list a:nth-child(n+4) {
+  .reviews__img .reviews_img-list li:nth-child(n+4) {
     display: none;
   }
 }
@@ -2151,24 +2151,30 @@ header .header-buttons__open-modal {
 footer {
   padding-top: 30px;
   padding-bottom: 30px;
-}
-footer .container {
   text-align: center;
 }
-footer .container .footer-contacts-item {
+footer .footer-contacts-item {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-footer .container .footer-contacts-item .footer-phone-link {
+footer .footer-contacts-item .footer-phone-link {
   font-weight: 600;
   font-size: 14px;
   line-height: 1.214;
   letter-spacing: 0.08em;
   color: #111518;
 }
+footer .footer-contacts-item .instagram-link {
+  background-image: url("/instagram.244b4cdf.svg");
+  display: inline-flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+}
 @media screen and (max-width: 767px) {
-  footer .container .footer-contacts-item:not(:last-child) {
+  footer .footer-contacts-item:not(:last-child) {
     margin-bottom: 30px;
   }
 }
