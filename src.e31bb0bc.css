@@ -97,8 +97,8 @@ button {
 
 .contacts-form-button {
   margin-top: 50px;
-  width: 260px;
-  height: 48px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
@@ -117,6 +117,7 @@ button {
 @media screen and (min-width: 1366px) {
   .contacts-form-button {
     margin-top: 80px;
+    padding: 25px;
   }
 }
 
@@ -902,7 +903,6 @@ header .header-buttons__open-modal {
 }
 
 .problems__title {
-  width: 280px;
   height: 128px;
   margin: 0 auto;
   margin-bottom: 27px;
@@ -946,7 +946,6 @@ header .header-buttons__open-modal {
 
 .problems__list {
   counter-reset: section;
-  width: 280px;
   height: 488px;
   margin: 0 auto;
   padding: 20px 0;
@@ -1106,7 +1105,6 @@ header .header-buttons__open-modal {
 }
 
 .how-we-do__card {
-  width: 280px;
   height: 280px;
   padding-top: 30px;
   padding-bottom: 22px;
@@ -1886,16 +1884,11 @@ header .header-buttons__open-modal {
 }
 
 .reviews__list {
-  width: 100%;
-  height: 564px;
   box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
 }
 .reviews__list img {
   padding: 20px 0 25px 0;
   margin: auto;
-}
-.reviews__list svg {
-  margin-bottom: 25px;
 }
 .reviews__list h3 {
   font-weight: 800;
@@ -1906,9 +1899,11 @@ header .header-buttons__open-modal {
   color: #ff6b09;
   margin-bottom: 10px;
 }
+.reviews__list article {
+  padding: 20px 20px;
+}
 .reviews__list .reviews__article {
-  width: 240px;
-  margin: auto;
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.25;
@@ -1917,8 +1912,6 @@ header .header-buttons__open-modal {
   margin-bottom: 10px;
 }
 .reviews__list .reviews__article-p {
-  width: 240px;
-  margin: auto;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.66;
